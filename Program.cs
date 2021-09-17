@@ -18,11 +18,11 @@ namespace CrossPlat
 
         static int Run(int In)
         {
-            int n = 0;      // номер элемента.
-            int Out = 1;  // значение элемента
+            int n = 0;     
+            int Out = 1;  
             while (n != In)
             {
-                if (Is(Out++)) n++; // bool is(int k) от Байт'a.
+                if (Is(Out++)) n++; 
             }
             Out--;
 
@@ -39,14 +39,13 @@ namespace CrossPlat
 
             if (!File.Exists(PATH + INPUT_FILENAME))
             {
-                // Create a file to write to.
                 using (StreamWriter sw = File.CreateText(PATH + INPUT_FILENAME))
                 {
                     sw.WriteLine("9");
                 }
             }
 
-            // Open the file to read from.
+           
 
             int In;
 
@@ -55,11 +54,9 @@ namespace CrossPlat
                 In = Convert.ToInt32(sr.ReadLine());
             }
 
-            // Run func
             int Out = Run(In);
 
            
-            // Create a file to write to.
             using (StreamWriter sw = File.CreateText(PATH + OUTPUT_FILENAME))
             {
                 sw.WriteLine(Out.ToString());
